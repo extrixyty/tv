@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="google" content="translate: yes">
+    <title>XVideos Access - Multilingual</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif, system-ui;
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        /* Container for the translation widget */
+        #translate-widget {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #222;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 20px; /* Отступ снизу для виджета перевода */
+        }
+
+        /* Google Translate Dropdown Styling */
+        .goog-te-combo {
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            border: 1px solid #888;
+            width: 200px;
+        }
+
+        #container {
+            width: 90%; /* Responsive width */
+            max-width: 500px;
+            background: #000;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            z-index: 1; /* Ensure container is above the translation widget */
+            margin-top: 40px; /* Top margin for container */
+        }
+
+        .video-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0; /* No margin between video and button */
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .intro-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff4500;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 15px;
+            font-family: 'Helvetica Neue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .registration-container {
+            text-align: center;
+        }
+
+        #cta-button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            text-transform: uppercase;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 0; /* No margin for button */
+        }
+
+        #cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Translation widget -->
+    <div id="translate-widget">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div id="container">
+        <!-- Intro Text -->
+        <div class="intro-text">
+            I WILL GET TO KNOW YOU FOR COMMUNICATION AND PERSONAL MEETINGS
+        </div>
+
+        <!-- Video -->
+        <div class="video-container">
+            <video id="video" autoplay muted>
+                <source src="woman.mp4" type="video/mp4">
+                Ваш браузер не поддерживает элемент видео.
+            </video>
+        </div>
+
+        <!-- Registration Button -->
+        <div class="registration-container">
+            <a href="https://offers.affimelody.com/click?pid=118208&offer_id=25" id="cta-button" target="_blank">MEET</a>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+
+        video.onended = function() {
+            video.currentTime = 0;
+        };
+
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.currentTime = 0;
+                video.play();
+            }
+        });
+
+        // Google Translate widget integration
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'af,am,ar,bn,bs,ca,cs,da,de,el,en,es,et,fa,fi,fil,fr,gu,hi,hr,hu,id,is,it,ja,jw,ka,km,kn,ko,lo,lt,lv,mk,ml,mr,ms,my,ne,nl,pa,pl,ps,pt,qu,ro,ru,si,sk,sl,sq,sr,sv,sw,ta,te,th,tr,uk,ur,vi,wa,xh,zh-CN,zh-TW,zu', // Max number of languages supported
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        // Load Google Translate API
+        (function() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>
